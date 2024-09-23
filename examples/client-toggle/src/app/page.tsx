@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import StateProvider from "./state";
 import Tab from "./Tab";
 import ToggleTab from "./ToggleTab";
@@ -52,3 +53,8 @@ function SecondaryContent() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "Client Toggle - learn react server component by @tungv",
+  description: "An example of combining client state against server data",
+};
