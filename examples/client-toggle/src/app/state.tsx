@@ -40,10 +40,6 @@ export function useSelectedTabState() {
   const state = useStateContext();
   const dispatch = useDispatch();
 
-  if (state === null || dispatch === null) {
-    throw new Error("useSelectedTabState must be used within a StateProvider");
-  }
-
   return [
     state.activeTab,
     () => dispatch({ type: "toggleActiveTab" }),
