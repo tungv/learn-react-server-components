@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useReducer } from "react";
+import { createReducerContext } from "src/utils/createReducerContext";
 
 const tabs = ["default", "secondary"] as const;
 
@@ -16,18 +16,8 @@ const initialState: State = {
   activeTab: "default",
 } as const;
 
-const ctx = createContext<State | null>(null);
-const dispatchCtx = createContext<React.Dispatch<Action> | null>(null);
-
-export default function StateProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const [state, dispatch] = useReducer(function reducer(
-    state: State,
-    action: Action,
-  ) {
+const [StateProvider, useStateContext, useDispatch] = createReducerContext(
+  function reducer(state: State, action: Action) {
     switch (action.type) {
       case "toggleActiveTab":
         return {
@@ -40,18 +30,15 @@ export default function StateProvider({
       default:
         return state;
     }
-  }, initialState);
+  },
+  initialState,
+);
 
-  return (
-    <ctx.Provider value={state}>
-      <dispatchCtx.Provider value={dispatch}>{children}</dispatchCtx.Provider>
-    </ctx.Provider>
-  );
-}
+export default StateProvider;
 
 export function useSelectedTabState() {
-  const state = useContext(ctx);
-  const dispatch = useContext(dispatchCtx);
+  const state = useStateContext();
+  const dispatch = useDispatch();
 
   if (state === null || dispatch === null) {
     throw new Error("useSelectedTabState must be used within a StateProvider");
