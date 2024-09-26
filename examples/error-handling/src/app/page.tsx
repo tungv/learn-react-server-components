@@ -15,6 +15,10 @@ export default function Home() {
       >
         Go to nested error
       </Link>
+
+      <Link className="text-primary underline" href="/component-error">
+        Go to component error
+      </Link>
     </main>
   );
 }
