@@ -55,9 +55,18 @@ export default function RootLayout({
                 <li>
                   <Link
                     className="text-primary underline"
-                    href="/form-submission-error"
+                    href="/form-submission-error/simple"
                   >
                     form submission error
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    className="text-primary underline"
+                    href="/form-submission-error/advanced"
+                  >
+                    advanced form submission error
                   </Link>
                 </li>
               </ol>
