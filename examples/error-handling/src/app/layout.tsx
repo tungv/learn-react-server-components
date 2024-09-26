@@ -51,6 +51,15 @@ export default function RootLayout({
                     component error
                   </Link>
                 </li>
+
+                <li>
+                  <Link
+                    className="text-primary underline"
+                    href="/form-submission-error"
+                  >
+                    form submission error
+                  </Link>
+                </li>
               </ol>
             </nav>
           </aside>
