@@ -10,16 +10,14 @@ export default function FullPageError({
   return (
     <div className="flex flex-col gap-4 p-12 bg-red-100">
       <h1 className="text-2xl font-bold text-red-500">
-        This is a full page error boundary.
+        This is a nested error boundary.
       </h1>
       <p>
         The error is: <code className="font-mono">{error.message}</code>
       </p>
       <p>
         This is defined in the{" "}
-        <code className="font-mono underline">
-          app/full-page-error/error.tsx
-        </code>{" "}
+        <code className="font-mono underline">app/nested-error/error.tsx</code>{" "}
         file.
       </p>
       <p>
