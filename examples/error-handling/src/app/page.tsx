@@ -19,6 +19,19 @@ export default function Home() {
       <Link className="text-primary underline" href="/component-error">
         Go to component error
       </Link>
+
+      <Link
+        className="text-primary underline"
+        href="/form-submission-error/simple"
+      >
+        Go to form submission error (simple)
+      </Link>
+      <Link
+        className="text-primary underline"
+        href="/form-submission-error/advanced"
+      >
+        Go to form submission error
+      </Link>
     </main>
   );
 }
