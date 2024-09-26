@@ -1,7 +1,6 @@
-# This example shows how to use client state on server data
+# This example shows how to handle errors while rendering data in React
 
-Server components know how to populate the data, but they can't react to the client interaction.
-Therefore we need to use client state to toggle the visibility of the tab.
+By default, Next.js have a file convention to handle page level errors. However, we can also use a custom component to handle errors in a specific part of the component tree.
 
 ## How to run
 
